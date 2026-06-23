@@ -1,10 +1,10 @@
 /** @type {import('./src/models/config').EInitiativeConfig} */
 export default {
 	metadata: {
-		title: 'เขียนใหม่ทั้งฉบับ เลือกตั้ง100%',
-		description: 'ต้องการ 50,000 ชื่อ เสนอคำถามประชามติ สู่รัฐธรรมนูญใหม่',
-		siteUrl: 'https://conforall.com/',
-		previewImageUrl: 'https://conforall.com/og.png',
+		title: 'รณรงค์ลบมรดกรัฐประหาร 6 ตุลา',
+		description: 'รณรงค์ลบมรดกรัฐประหาร 6 ตุลา',
+		siteUrl: 'https://6oct.in.th/',
+		previewImageUrl: 'https://6oct.in.th/og.png',
 	},
 	petition: {
 		endDate: new Date('2026-06-30T00:00:00+07:00'),
@@ -15,7 +15,7 @@ export default {
 			headquarter: {
 				name: '',
 				address:
-					'1111/3 บ้านกลางเมืองรัชดา-ลาดพร้าว ถ.ลาดพร้าว แขวงจันทรเกษม เขตจตุจักร กทม. 10900',
+					'อาคาร ALL RISE บ้านเลขที่ 1111/3 บ้านกลางเมืองรัชดา-ลาดพร้าว (หลังตรงกลางติดถนนใหญ่) ถนน ลาดพร้าว แขวงจันทรเกษม เขตจตุจักร กรุงเทพมหานคร 10900',
 				embedGoogleMapUrl:
 					'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3874.5792700399415!2d100.57731679999999!3d13.8042179!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e29f78881156fb%3A0x7356cb8f9a29f043!2z4Lit4Liy4LiE4Liy4LijIEFMTCBSSVNFIChpTGF3KQ!5e0!3m2!1sen!2sth!4v1781152200705!5m2!1sen!2sth',
 			},
