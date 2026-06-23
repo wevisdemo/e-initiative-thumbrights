@@ -1,0 +1,105 @@
+---
+import Config from '../../../e-initiative.config.mjs';
+import SectionContainer from '../SectionContainer.astro';
+import UpdateTimestamp from '../UpdateTimestamp.svelte';
+import PenIcon from '../icons/PenIcon.svelte';
+import { isCampaignEnded } from '../../utils/campaign';
+import { countSubmittedDocuments } from '../../utils/firebase';
+import { countOfflineSignatures } from '../../utils/sheets';
+import Sharer from '../Sharer.svelte';
+import { withBase } from '../../utils/url';
+import LocationIcon from '../icons/LocationIcon.svelte';
+
+const documentCount = await countSubmittedDocuments();
+---
+
+<SectionContainer
+	outerClass="min-h-screen justify-center bg-primary"
+	innerClass="flex w-full flex-col items-center justify-center text-center "
+	hideNavbar
+	showMarquee
+	bgImage={withBase('image/bg.png')}
+>
+	<div
+		class="flex w-full max-w-[850px] flex-col gap-2 text-center md:flex-row md:gap-10"
+	>
+		<div class="flex flex-col items-center justify-center gap-2 md:gap-5">
+			<!-- <h1 class="heading-responsive-03">{Config.metadata.title}</h1>
+		<p>{Config.metadata.description}</p> -->
+			<img
+				class="w-[230px] max-w-[356px] md:w-[356px]"
+				src={withBase('image/logo-e.svg')}
+				alt=""
+			/>
+			<p class="body-02-semibold max-w-[220px] text-primary">
+				ร่วมลงชื่อยกเลิกคำสั่งคณะรัฐประหาร ฉบับที่ 41 มรดกจาก 6 ตุลา
+				ที่เพิ่มโทษขั้นต่ำของมาตรา 112 และทำให้ประชาชนต้องเผชิญโทษ จำคุกหนักขึ้น
+				จากการใช้สิทธิเสรีภาพ
+			</p>
+		</div>
+		<div class="my-auto flex w-full flex-col">
+			<p class="body-03-normal mt-1 text-neutral">
+				ต้องการ {Config.petition.expectedSignatures.toLocaleString()} รายชื่อ
+			</p>
+
+			<div class="flex flex-col gap-3">
+				<div>
+					<p class="heading-responsive-02 text-neutral">
+						ลงแล้ว <b class="text-primary">{documentCount.toLocaleString()}</b> คน
+					</p>
+					<p class="body-03-normal text-neutral">
+						<!-- {dayElapsed > 0 && <>เหลือเวลาอีก {dayElapsed} วัน</>} -->
+						ภายใน 6 ตุลาคม 2569
+					</p>
+					<UpdateTimestamp client:load date={new Date()} />
+				</div>
+				{
+					isCampaignEnded ? (
+						<div class="flex flex-row items-center gap-2">
+							<div class="h-[2px] flex-1 bg-secondary" />
+							<p class="font-bold text-secondary">ปิดรับลงชื่อแล้ว</p>
+							<div class="h-[2px] flex-1 bg-secondary" />
+						</div>
+					) : (
+						<div class="space-y-2">
+							<a
+								href="?channel=online#sign"
+								class="heading-03 btn btn-block border-none bg-primary text-white hover:bg-primary-focus"
+							>
+								ลงชื่อเลย
+								<PenIcon />
+							</a>
+							{Config.sheets?.enableLocations && (
+								<a
+									href="?channel=offline#sign"
+									class="heading-03 btn btn-outline btn-block border-secondary text-primary hover:text-white"
+								>
+									ดูสถานที่ลงชื่อ
+									<LocationIcon />
+								</a>
+							)}
+							{/* {Config.petition.offline?.volunteer && (
+								<a
+									href="#volunteer"
+									class="heading-03 btn btn-secondary btn-block"
+								>
+									อาสาล่ารายชื่อ
+									<TableIcon />
+								</a>
+							)} */}
+						</div>
+					)
+				}
+			</div>
+
+			<div class="mt-3 flex flex-col gap-2">
+				<a class="body-03-semibold text-" href="#why">ทำไมต้องลงชื่อ</a>
+			</div>
+
+			<div class="mt-3 flex items-center justify-center gap-3 text-primary">
+				<span class="body-01">แชร์</span>
+				<Sharer />
+			</div>
+		</div>
+	</div>
+</SectionContainer>

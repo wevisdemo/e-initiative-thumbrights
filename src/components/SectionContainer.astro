@@ -1,0 +1,40 @@
+---
+import Marquee from './Marquee.astro';
+
+interface Props {
+	id?: string;
+	outerClass?: string;
+	innerClass?: string;
+	hideNavbar?: boolean;
+	showMarquee?: boolean;
+	landingHeight?: boolean;
+	bgImage?: string;
+}
+
+const {
+	id,
+	outerClass,
+	innerClass,
+	hideNavbar,
+	showMarquee = false,
+	landingHeight = false,
+	bgImage,
+} = Astro.props;
+
+const bgStyle = bgImage
+	? `background-image:url('${bgImage}');background-size:cover;background-position:center;background-repeat:no-repeat;`
+	: undefined;
+---
+
+<div class="relative">
+	<div
+		{id}
+		class={` w-full flex flex-col items-center px-3 py-12  ${outerClass || ''}`}
+		data-navbar={hideNavbar ? 'hide' : 'show'}
+		style={bgStyle}
+	>
+		<div class={innerClass}>
+			<slot />
+		</div>
+	</div>
+</div>

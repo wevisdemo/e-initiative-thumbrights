@@ -1,0 +1,68 @@
+---
+import fs from 'node:fs';
+import path from 'node:path';
+
+import SectionContainer from '../SectionContainer.astro';
+import { withBase } from '../../utils/url';
+
+const partnerDir = path.join(process.cwd(), 'public/partner');
+const partners = fs
+	.readdirSync(partnerDir)
+	.filter((file) => /\.(jpe?g|png|gif|webp|svg)$/i.test(file))
+	.sort()
+	.map((file) => ({
+		name: path.basename(file, path.extname(file)).replace(/[-_]/g, ' '),
+		src: `partner/${encodeURIComponent(file)}`,
+	}));
+---
+
+<SectionContainer
+	outerClass="bg-base-100"
+	innerClass="flex max-w-screen-md flex-col items-center gap-8 text-center"
+>
+	<h2 class="heading-responsive-02">รู้จักเรา</h2>
+
+	<div class="flex flex-col items-center gap-4">
+		<h3 class="heading-03">เครือข่ายรณรงค​์ลบมรดกรัฐประหาร 6 ตุลา</h3>
+		<img src={withBase('image/6oct.svg')} alt="" class="w-[150px]" />
+		<p class="body-02-normal text-black">
+			พวกเรามาจากผู้คนหลากหลายรุ่น หลากหลายกลุ่ม และหลากหลายองค์กร
+			ทั้งผู้ที่เคยผ่านเหตุการณ์ 6 ตุลาคม 2519<br />
+			และผู้ที่เกิดไม่ทันได้สัมผัสเหตุการณ์ นั้นด้วยตนเอง แต่สิ่งที่พวกเรามีร่วมกันคือ<br
+			/>ความเชื่อมั่นในคุณค่าของประชาธิปไตย การคุ้มครอง สิทธิเสรีภาพของประชาชน
+			และการไม่ยอมรับ<br />
+			ผลพวงที่สืบทอดมาจากการรัฐประหาร
+			<br />
+			<br />
+			พวกเราเห็นร่วมกันว่าเสรีภาพในการแสดงออก ซึ่งเป็นรากฐานสำคัญของสังคมประชาธิปไตย<br
+			/>
+			ยังคงเผชิญข้อจำกัดจากกฎหมายและโครงสร้างทางอำนาจที่หลงเหลือจากอดีต จึงอยากชวนกันลุกขึ้น<br
+			/>
+			มาทำอะไรสักอย่าง เพื่อร่วมกันตั้งคำถาม ทบทวน และผลักดันให้สังคมไทยก้าวไปข้างหน้า
+			<br />
+			<br />
+			ในวาระครบรอบ 50 ปี ของเหตุการณ์ 6 ตุลาฯ พวกเราจึงขอเชิญชวนทุกคนมาร่วมรำลึก
+			เรียนรู้ และร่วมรณรงค์<br />เพื่อยืนยันว่าอดีตไม่ควรถูกลืม
+			และอนาคตของสังคมไทยควรตั้งอยู่บนหลักการเคารพสิทธิ เสรีภาพในการแสดงออก<br
+			/>และระบอบ ประชาธิปไตย มาร่วมเป็นส่วนหนึ่งกับพวกเรา
+			เพราะการเปลี่ยนแปลงเริ่มต้นได้จากการลงมือทำ <br />
+			ของทุกคน
+		</p>
+	</div>
+
+	<div class="flex flex-col items-center gap-4">
+		<h3 class="heading-03">เครือข่ายของเรา</h3>
+
+		<div class="flex flex-row flex-wrap justify-center gap-2">
+			{
+				partners.map(({ name, src }) => (
+					<img
+						src={withBase(src)}
+						alt={name}
+						class="h-11 w-11 object-contain"
+					/>
+				))
+			}
+		</div>
+	</div>
+</SectionContainer>

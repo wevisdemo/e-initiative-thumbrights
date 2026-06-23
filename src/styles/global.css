@@ -1,0 +1,107 @@
+html {
+	scroll-behavior: smooth;
+}
+
+/* Color values mirror e-initiative.config.mjs theme.colors.
+   base-200 is auto-derived by DaisyUI (not in config). */
+
+.bg-primary {
+	background-color: #d1295a;
+}
+.bg-primary-focus {
+	background-color: #a2103b;
+}
+
+.hover\:bg-primary-focus:hover {
+	background-color: #a2103b !important;
+}
+
+.bg-secondary {
+	background-color: #8b7f87;
+}
+.bg-secondary-focus {
+	background-color: #6b6167;
+}
+.hover\:bg-secondary-focus:hover {
+	background-color: #6b6167 !important;
+}
+.bg-accent {
+	background-color: #8054ff;
+}
+.bg-accent-focus {
+	background-color: #5929e3;
+}
+.bg-neutral {
+	background-color: #000000;
+}
+.bg-base-100 {
+	background-color: #fafbf4;
+}
+.bg-base-200 {
+	background-color: #d1d1d1;
+}
+.bg-base-300 {
+	background-color: #484848;
+}
+.bg-info {
+	background-color: #f8eb54;
+}
+
+.text-primary {
+	color: #d1295a;
+}
+.text-primary-focus {
+	color: #a2103b;
+}
+.text-secondary {
+	color: #8b7f87;
+}
+.text-secondary-focus {
+	color: #6b6167;
+}
+.text-accent {
+	color: #8054ff;
+}
+.text-accent-focus {
+	color: #5929e3;
+}
+.text-neutral {
+	color: #000000;
+}
+.text-base-100 {
+	color: #fafbf4;
+}
+.text-base-200 {
+	color: #d1d1d1;
+}
+.text-base-300 {
+	color: #484848;
+}
+.text-info {
+	color: #f8eb54;
+}
+
+.border-primary {
+	border-color: #d1295a !important;
+}
+.border-primary-focus {
+	border-color: #a2103b !important;
+}
+.border-secondary {
+	border-color: #8b7f87 !important;
+}
+.border-secondary-focus {
+	border-color: #6b6167 !important;
+}
+.border-accent {
+	border-color: #8054ff !important;
+}
+.border-accent-focus {
+	border-color: #5929e3 !important;
+}
+.border-neutral {
+	border-color: #000000 !important;
+}
+.border-info {
+	border-color: #f8eb54 !important;
+}

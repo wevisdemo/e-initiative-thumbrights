@@ -1,0 +1,432 @@
+---
+import SectionContainer from '../SectionContainer.astro';
+import PenIcon from '../icons/PenIcon.svelte';
+import { withBase } from '../../utils/url';
+
+const laws = [
+	{
+		section: 'ม.112',
+		title: 'หมิ่นประมาทกษัตริย์',
+		oldBars: 7,
+		oldLabel: 'ไม่เกิน 7 ปี',
+		newBars: 15,
+		newLabel: '3-15 ปี',
+		note: '*กำหนดโทษใหม่ ให้จำคุกขั้นต่ำ 3 ปี',
+		minYears: 3,
+	},
+	{
+		section: 'ม.133',
+		title: 'หมิ่นประมุขต่างชาติ',
+		oldBars: 3,
+		oldLabel: 'ไม่เกิน 3 ปี',
+		newBars: 7,
+		newLabel: '1-7 ปี*',
+		note: '*กำหนดโทษใหม่ ให้จำคุกขั้นต่ำ 1 ปี',
+		minYears: 1,
+	},
+	{
+		section: 'ม.206',
+		title: 'ดูหมิ่นสถานที่ศาสนา',
+		oldBars: 3,
+		oldLabel: 'ไม่เกิน 3 ปี',
+		newBars: 7,
+		newLabel: '1-7 ปี*',
+		note: '*กำหนดโทษใหม่ ให้จำคุกขั้นต่ำ 1 ปี',
+		minYears: 1,
+	},
+	{
+		section: 'ม.118',
+		title: 'เหยียดหยามธงชาติ',
+		oldBars: 1,
+		oldLabel: 'ไม่เกิน 1 ปี',
+		newBars: 2,
+		newLabel: 'ไม่เกิน 2 ปี',
+		note: '',
+		minYears: 0,
+	},
+	{
+		section: 'ม.326',
+		title: 'หมิ่นประมาท',
+		oldBars: 0.5,
+		oldLabel: 'ไม่เกิน 6 เดือน',
+		newBars: 1,
+		newLabel: 'ไม่เกิน 1 ปี',
+		note: '',
+		minYears: 0,
+	},
+	{
+		section: 'ม.328',
+		title: 'หมิ่นประมาทโดยการโฆษณา',
+		oldBars: 0.5,
+		oldLabel: 'ไม่เกิน 6 เดือน',
+		newBars: 2,
+		newLabel: 'ไม่เกิน 2 ปี',
+		note: '',
+		minYears: 0,
+	},
+];
+---
+
+<SectionContainer
+	showMarquee
+	innerClass="flex w-full max-w-[600px] flex-col items-center gap-[50px] text-center"
+	landingHeight
+	outerClass="bg-base-100"
+>
+	<div class="flex flex-col items-center gap-20">
+		<div class="detail-imgs flex flex-col items-center gap-10">
+			<div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+				<img
+					class="detail-img h-auto w-full"
+					style="--i:0"
+					src={withBase('image/detail-1.svg')}
+					alt=""
+				/>
+				<img
+					class="detail-img h-auto w-full"
+					style="--i:1"
+					src={withBase('image/detail-2.svg')}
+					alt=""
+				/>
+			</div>
+			<img
+				class="detail-img h-auto w-full"
+				style="--i:2"
+				src={withBase('image/detail-3.png')}
+				alt=""
+			/>
+		</div>
+
+		<div class="flex flex-col items-center gap-6">
+			<div class="flex flex-col items-center">
+				<p class="body-03-normal text-black">
+					หลังการสังหารหมู่ 6 ตุลาคม 2519<br />
+					ในเย็นวันเดียวกันได้เกิด<b class="body-03-semibold">รัฐประหาร</b><br
+					/>
+					ภายใต้การนำของ พล.ร.อ.สงัด ชลออยู่<br />
+				</p>
+			</div>
+
+			<div class="flex flex-col items-center gap-2">
+				<p class="heading-responsive-01 !font-normal text-primary">
+					15 วันต่อมา ออกคำสั่งฉบับที่ 41
+				</p>
+				<p class="body-03-normal text-black">
+					ซึ่งแก้ไขกฎหมายโดยมิชอบหลายประการ
+				</p>
+			</div>
+
+			<img
+				class="detail-img-solo w-full max-w-[277px] bg-white"
+				src={withBase('image/detail-4.svg')}
+				alt=""
+			/>
+		</div>
+
+		<div class="flex flex-col items-center gap-8">
+			<div class="flex flex-col items-center gap-2">
+				<p class="heading-responsive-01 !font-normal text-neutral">
+					คำสั่งนี้เปลี่ยนอะไร
+				</p>
+				<p class="body-03-normal text-black">
+					กฎหมายหลายฉบับถูกเพิ่มอัตราโทษ<br />
+					ของความผิดหลายฐานให้สูงขึ้นกว่าที่บัญญัติไว้เดิม <br />
+					รวมทั้งกำหนด โทษจำคุกขั้นต่ำในหลายกรณี โดยไม่ผ่านสภา
+				</p>
+			</div>
+
+			<div
+				class="relative flex max-w-[484px] flex-col gap-7 bg-[#fdf0f3] px-6 py-8 text-left md:w-[484px]"
+			>
+				<svg
+					class="pointer-events-none absolute inset-0 h-full w-full"
+					preserveAspectRatio="none"
+					aria-hidden="true"
+				>
+					<filter id="rough-border">
+						<feTurbulence
+							type="fractalNoise"
+							baseFrequency="0.1"
+							numOctaves="2"
+							seed="7"
+							result="noise"></feTurbulence>
+						<feDisplacementMap in="SourceGraphic" in2="noise" scale="3"
+						></feDisplacementMap>
+					</filter>
+					<rect
+						x="3"
+						y="3"
+						width="calc(100% - 6px)"
+						height="calc(100% - 6px)"
+						rx="5"
+						fill="none"
+						stroke="#d1295a"
+						stroke-width="2.5"
+						filter="url(#rough-border)"></rect>
+				</svg>
+
+				<p
+					class="heading-responsive-01 text-center !text-[21px] !font-normal text-primary"
+				>
+					ตัวอย่างกฎหมายสำคัญที่ถูกเพิ่มโทษสูงสุด
+				</p>
+
+				{
+					laws.map((law, i) => (
+						<div class="chart-row flex flex-col gap-3">
+							{i > 0 && <hr class="border-t border-dashed border-secondary" />}
+							<p class="heading-responsive-01 !text-[21px] !font-normal text-black md:pl-[88px]">
+								{law.section}&nbsp;&nbsp;{law.title}
+							</p>
+
+							<div class="flex items-center gap-3 md:pl-[88px]">
+								<span class="body-01-normal w-10 shrink-0 text-secondary">
+									เดิม
+								</span>
+								<div class="relative h-6">
+									<div
+										class={`chart-line absolute inset-0 top-0 h-[2px] bg-secondary opacity-50 ${law.oldBars === 0.5 ? 'w-[calc(100%+2px)] translate-x-[-2px]' : 'w-[calc(100%+4px)] translate-x-[-2px]'}`}
+									/>
+									<div class="flex h-6 items-stretch gap-1">
+										{Array.from({ length: Math.ceil(law.oldBars) }).map(
+											(_, i) => (
+												<span
+													class={`chart-bar block bg-secondary ${law.oldBars === 0.5 ? 'w-[2px]' : 'w-1'}`}
+													style={`--i:${i}`}
+												/>
+											),
+										)}
+									</div>
+									<div
+										class={`chart-line absolute bottom-0 h-[2px] bg-secondary opacity-50 ${law.oldBars === 0.5 ? 'w-[calc(100%+2px)] translate-x-[-2px]' : 'w-[calc(100%+4px)] translate-x-[-2px]'}`}
+									/>
+								</div>
+
+								<span class="body-01-normal text-black">{law.oldLabel}</span>
+							</div>
+
+							<div class="flex items-center gap-3 md:pl-[88px]">
+								<span class="body-01-normal w-10 shrink-0 text-primary">
+									ใหม่
+								</span>
+								<div class="relative gap-1">
+									<div class="chart-line absolute inset-0 top-0 z-0 h-[2px] w-[calc(100%+4px)] translate-x-[-2px] bg-primary opacity-50" />
+									<div class="flex h-6 items-stretch gap-1">
+										{Array.from({ length: law.newBars }).map((_, i) => (
+											<span
+												class={`chart-bar z-10 block w-1 ${
+													i < law.minYears ? 'bg-primary-focus' : 'bg-primary'
+												}`}
+												style={`--i:${i}`}
+											/>
+										))}
+									</div>
+									<div class="chart-line absolute bottom-0 z-0 h-[2px] w-[calc(100%+4px)] translate-x-[-2px] bg-primary opacity-50" />
+								</div>
+								<span class="body-01-normal text-black">{law.newLabel}</span>
+							</div>
+
+							{law.note && (
+								<p class="body-01-normal text-secondary md:pl-[88px]">
+									{law.note}
+								</p>
+							)}
+						</div>
+					))
+				}
+			</div>
+		</div>
+
+		<div class="flex flex-col items-center gap-6">
+			<p class="heading-responsive-01 !font-normal text-neutral">
+				กฎหมายที่ออกโดยรัฐประหาร<br />ยังส่งผลต่อเนื่องมาถึงปัจจุบัน
+			</p>
+
+			<div class="case-grid grid grid-cols-1 gap-2 md:grid-cols-2 md:gap-6">
+				<div
+					class="case-card relative flex flex-col justify-center overflow-hidden rounded-lg bg-cover bg-center bg-no-repeat px-4 py-4 text-left"
+					style={`--row:0; background-image: url(${withBase('image/case-1.svg')})`}
+				>
+					<p class="body-01-normal text-black">
+						ปี 2558-2568 อดีตข้าราชการ แชร์คลิปเสียง 29 ครั้ง กฎหมายนับ
+						แต่ละครั้งเป็นคนละกรรม โทษขั้นต่ำ 3 ปีต่อกรรม รวมเป็นโทษ 87 ปี
+						<p class="body-01-semibold mt-1 text-primary">
+							ม.112 หมิ่นประมาทกษัตริย์
+						</p>
+					</p>
+				</div>
+
+				<div
+					class="case-card relative flex flex-col justify-center overflow-hidden rounded-lg bg-cover bg-center bg-no-repeat px-4 py-4 text-left"
+					style={`--row:1; background-image: url(${withBase('image/case-3.svg')})`}
+				>
+					<p class="body-01-normal text-black">
+						ปี 2568 หญิงวัย 64 ปี ถูกศาลฎีกาตัดสินว่ามีความ
+						ผิดจากการยืนรอขบวนและตะโกนวิพากษ์วิจารณ์การทำงานของ พล.อ.ประยุทธ์
+						จันทร์โอชา ที่ อ.บ้านโป่ง จ.ราชบุรี เมื่อปี 2566
+						<p class="body-01-semibold mt-1 text-primary">
+							ม.138 ต่อสู้ขัดขวางเจ้าพนักงาน
+						</p>
+					</p>
+				</div>
+
+				<div
+					class="case-card relative flex flex-col justify-center overflow-hidden rounded-lg bg-cover bg-center bg-no-repeat px-4 py-4 text-left"
+					style={`--row:2; background-image: url(${withBase('image/case-5.svg')})`}
+				>
+					<p class="body-01-normal text-black">
+						ปี 2569 ร.อ.ธรรมนัส พรหมเผ่า นักการเมือง พรรคกล้าธรรม
+						ให้สัมภาษณ์ว่าได้ดำเนินคดีประชาชน ที่โพสต์วิพากษ์วิจารณ์ตนเองกว่า
+						600 คดี ที่ จ.พะเยา
+
+						<p class="body-01-semibold mt-1 text-primary">
+							ม.326 และ328 หมิ่นประมาทโดยการโฆษณา
+						</p>
+					</p>
+				</div>
+				<div
+					class="case-card relative flex flex-col justify-center overflow-hidden rounded-lg bg-cover bg-center bg-no-repeat px-4 py-4 text-left"
+					style={`--row:2; background-image: url(${withBase('image/case-6.svg')})`}
+				>
+					<p class="body-01-normal text-black">
+						ปี 2564 แรปเปอร์หญิงชื่อดังถูกเปรียบเทียบ
+						ปรับจากการแสดงความเห็นวิพากษ์วิจารณ์การทำงานของรัฐบาลในสถานการณ์โควิด-19
+
+						<p class="body-01-semibold mt-1 text-primary">
+							ม.393 ดูหมิ่นซึ่งหน้าหรือด้วยการโฆษณา
+						</p>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<style>
+		/* detail images: dissolve in one by one */
+		.detail-img {
+			opacity: 0;
+			transition: opacity 0.8s ease-out;
+		}
+		.detail-imgs.in-view .detail-img {
+			opacity: 1;
+			transition-delay: calc(var(--i) * 0.4s);
+		}
+
+		/* detail-4: dissolve in solo */
+		.detail-img-solo {
+			opacity: 0;
+			transition: opacity 0.8s ease-out;
+		}
+		.detail-img-solo.in-view {
+			opacity: 1;
+		}
+
+		/* horizontal lines: reveal left -> right first */
+		.chart-line {
+			clip-path: inset(0 100% 0 0);
+			transition: clip-path 0.5s ease-out;
+		}
+		.chart-row.in-view .chart-line {
+			clip-path: inset(0 0 0 0);
+		}
+
+		/* vertical bars: grow up, staggered left -> right after lines */
+		.chart-bar {
+			transform: scaleY(0);
+			transform-origin: bottom;
+			transition: transform 0.25s ease-out;
+		}
+		.chart-row.in-view .chart-bar {
+			transform: scaleY(1);
+			transition-delay: calc(0.5s + var(--i) * 0.04s);
+		}
+
+		/* case cards: dissolve in pairs (rows) top -> bottom */
+		.case-card {
+			opacity: 0;
+			transform: translateY(12px);
+			transition:
+				opacity 0.6s ease-out,
+				transform 0.6s ease-out;
+		}
+		.case-grid.in-view .case-card {
+			opacity: 1;
+			transform: translateY(0);
+			transition-delay: calc(var(--row) * 0.35s);
+		}
+
+		@media (prefers-reduced-motion: reduce) {
+			.chart-line,
+			.chart-bar,
+			.case-card,
+			.detail-img,
+			.detail-img-solo {
+				transition: none;
+			}
+		}
+	</style>
+
+	<script>
+		const rows = document.querySelectorAll('.chart-row');
+		const observer = new IntersectionObserver(
+			(entries) => {
+				entries.forEach((entry) => {
+					if (entry.isIntersecting) {
+						entry.target.classList.add('in-view');
+						observer.unobserve(entry.target);
+					}
+				});
+			},
+			{ threshold: 0.4 },
+		);
+		rows.forEach((row) => observer.observe(row));
+
+		const detailImgs = document.querySelector('.detail-imgs');
+		if (detailImgs) {
+			const detailObserver = new IntersectionObserver(
+				(entries) => {
+					entries.forEach((entry) => {
+						if (entry.isIntersecting) {
+							entry.target.classList.add('in-view');
+							detailObserver.unobserve(entry.target);
+						}
+					});
+				},
+				{ threshold: 0.2 },
+			);
+			detailObserver.observe(detailImgs);
+		}
+
+		const detailSolos = document.querySelectorAll('.detail-img-solo');
+		if (detailSolos.length) {
+			const soloObserver = new IntersectionObserver(
+				(entries) => {
+					entries.forEach((entry) => {
+						if (entry.isIntersecting) {
+							entry.target.classList.add('in-view');
+							soloObserver.unobserve(entry.target);
+						}
+					});
+				},
+				{ threshold: 0.2 },
+			);
+			detailSolos.forEach((el) => soloObserver.observe(el));
+		}
+
+		const caseGrid = document.querySelector('.case-grid');
+		if (caseGrid) {
+			const caseObserver = new IntersectionObserver(
+				(entries) => {
+					entries.forEach((entry) => {
+						if (entry.isIntersecting) {
+							entry.target.classList.add('in-view');
+							caseObserver.unobserve(entry.target);
+						}
+					});
+				},
+				{ threshold: 0.2 },
+			);
+			caseObserver.observe(caseGrid);
+		}
+	</script>
+</SectionContainer>

@@ -1,0 +1,34 @@
+---
+import Config from '../../e-initiative.config.mjs';
+import Body from '../layouts/Body.astro';
+import Navbar from '../components/Navbar.svelte';
+import LandingSection from '../components/index/LandingSection.astro';
+import IntroSection from '../components/index/IntroSection.astro';
+import SignSection from '../components/index/SignSection.astro';
+import VolunteerSection from '../components/index/VolunteerSection.astro';
+import AboutSection from '../components/index/AboutSection.astro';
+import DetailSection from '../components/index/DetailSection.astro';
+import BarSection from '../components/index/BarSection.astro';
+import { isCampaignEnded } from '../utils/campaign';
+import UnderBarSection from '../components/index/UnderBarSection.astro';
+---
+
+<Body>
+	<div class="flex flex-col">
+		<LandingSection />
+		<IntroSection />
+		<DetailSection />
+		<BarSection />
+		<UnderBarSection />
+		{
+			!isCampaignEnded && (
+				<>
+					<SignSection />
+					{Config.petition.offline?.volunteer && <VolunteerSection />}
+				</>
+			)
+		}
+		<AboutSection />
+	</div>
+	<Navbar slot="after-footer" client:idle />
+</Body>

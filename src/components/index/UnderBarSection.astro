@@ -1,0 +1,41 @@
+---
+import SectionContainer from '../SectionContainer.astro';
+import DocumentIcon from '../icons/DocumentIcon.svelte';
+import PenIcon from '../icons/PenIcon.svelte';
+---
+
+<SectionContainer
+	innerClass="flex w-full max-w-[650px] flex-col items-center gap-16 px-4 py-10 text-center"
+	landingHeight
+	outerClass="bg-base-100 "
+>
+	<div class="flex flex-col items-center gap-8">
+		<p class="body-02-normal text-black">
+			คำสั่งนี้ถูกออกโดยการรัฐประหาร<br />
+			ไม่มีประชาชนคนไหนได้มีส่วนร่วม<br />
+			ผ่านมานานแล้ว<br />
+			ก็ยังฝังอยู่ในกฎหมายอาญาของประเทศไทย
+		</p>
+
+		<p class="body-02-normal text-black">
+			เนื่องในวาระ<b class="body-02-semibold">ครบรอบ 50 ปี 6 ตุลา</b><br />
+			เราขอเชิญทุกคนร่วมลงชื่อ<br />
+			<b class="body-02-semibold text-primary">
+				เสนอยกเลิกคำสั่งคณะปฏิรูป<br />การปกครองแผ่นดิน ฉบับที่ 41<br />
+				เพื่อคืนมาตรฐานโทษที่เป็นธรรม
+			</b>
+		</p>
+
+		<p class="body-02-normal text-black">
+			ไม่ให้กฎหมายถูกใช้เป็นเครื่องมือทางการ<br />เมืองอีกต่อไป
+			การเปลี่ยนแปลงเริ่มต้นได้<br />จากการลงชื่อของคุณ
+		</p>
+	</div>
+	<a
+		href="https://drive.google.com/file/d/1UnwVW3EacS7iQUSoTI_A0-T3Yx7c6jSb/view?usp=sharing"
+		target="_blank"
+		rel="noopener noreferrer"
+		class="heading-03 btn btn-outline btn-block border-secondary text-primary"
+		>อ่านร่าง พรบ. ฉบับเต็ม <DocumentIcon /></a
+	>
+</SectionContainer>

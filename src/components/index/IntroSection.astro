@@ -1,0 +1,61 @@
+---
+import SectionContainer from '../SectionContainer.astro';
+import { withBase } from '../../utils/url';
+---
+
+<SectionContainer
+	id="why"
+	innerClass="flex w-full max-w-[600px] flex-col items-center gap-[15px] text-center"
+	showMarquee
+	landingHeight
+	outerClass="bg-base-100 "
+>
+	<h2 class="heading-responsive-01 text-primary md:mt-[72px]">6 ตุลาคม 2519</h2>
+
+	<img
+		class="detail-img-solo h-auto w-full"
+		src={withBase('image/photo1.jpg')}
+		alt=""
+	/>
+
+	<p class="body-02-normal max-w-[600px] text-black">
+		นักศึกษาและประชาชนชุมนุมอย่างสงบมาหลายวัน <br />
+		ก่อนความสงบนั้นจะจบลงด้วยการล้อมปราบและสังหารหมู่กลางเมือง <br />
+		<br />
+
+		กลายเป็นเหตุการณ์ที่หลายคนลืมไม่ได้ จำไม่ลง
+	</p>
+
+	<style>
+		.detail-img-solo {
+			opacity: 0;
+			transition: opacity 0.8s ease-out;
+		}
+		.detail-img-solo.in-view {
+			opacity: 1;
+		}
+		@media (prefers-reduced-motion: reduce) {
+			.detail-img-solo {
+				transition: none;
+			}
+		}
+	</style>
+
+	<script>
+		const solo = document.querySelector('.detail-img-solo');
+		if (solo) {
+			const observer = new IntersectionObserver(
+				(entries) => {
+					entries.forEach((entry) => {
+						if (entry.isIntersecting) {
+							entry.target.classList.add('in-view');
+							observer.unobserve(entry.target);
+						}
+					});
+				},
+				{ threshold: 0.2 },
+			);
+			observer.observe(solo);
+		}
+	</script>
+</SectionContainer>
