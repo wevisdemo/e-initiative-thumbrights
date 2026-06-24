@@ -47,7 +47,7 @@
 		</CardContainer>
 	{:else if Config.petition.offline}
 		<div class="body-02-normal space-y-3">
-			{#if Config.sheets?.enableLocations}
+			<!-- {#if Config.sheets?.enableLocations}
 				<CardContainer class="space-y-3">
 					<p class="heading-03">วิธีที่ 1 : เดินทางไปลงชื่อที่จุดตั้งโต๊ะ</p>
 					<a
@@ -58,14 +58,14 @@
 					</a>
 				</CardContainer>
 				<p class="text-center text-base-100">หรือ</p>
-			{/if}
+			{/if} -->
 
 			<CardContainer class="divide-y pb-1">
-				<h1 class="heading-03 mb-3">
+				<!-- <h1 class="heading-03 mb-3">
 					{Config.sheets?.enableLocations
 						? 'วิธีที่ 2 : '
 						: ''}ดาวน์โหลดแบบฟอร์มมากรอก
-				</h1>
+				</h1> -->
 				<StepBlock>
 					<svelte:fragment slot="heading"
 						>1. ดาวน์โหลดแบบฟอร์ม และพิมพ์ลงกระดาษ A4</svelte:fragment
