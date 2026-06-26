@@ -3,9 +3,8 @@ export default {
 	metadata: {
 		title: 'รณรงค์ลบมรดกรัฐประหาร 6 ตุลา',
 		description: 'รณรงค์ลบมรดกรัฐประหาร 6 ตุลา',
-		siteUrl: 'https://wevisdemo.github.io/e-initiative-thumbrights/',
-		previewImageUrl:
-			'https://wevisdemo.github.io/e-initiative-thumbrights/og.png',
+		siteUrl: 'https://decoup6octsins.com/',
+		previewImageUrl: 'https://decoup6octsins.com/yog.png',
 	},
 	petition: {
 		endDate: new Date('2026-06-30T00:00:00+07:00'),

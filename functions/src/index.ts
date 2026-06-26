@@ -10,7 +10,7 @@ const callableOptions = {
 		/\.web\.app$/,
 		/\.firebaseapp\.com$/,
 		/^https:\/\/wevisdemo\.github\.io$/,
-		/^https:\/\/conforall\.com$/,
+		/^https:\/\/decoup6octsins\.com$/,
 	],
 };
 
