@@ -75,15 +75,15 @@ const offlineSignatureCount = await countOfflineSignatures();
 								ลงชื่อเลย
 								<PenIcon />
 							</a>
-							{Config.sheets?.enableLocations && (
-								<a
-									href="?channel=offline#sign"
-									class="heading-03 btn btn-outline btn-block border-secondary text-primary hover:text-white"
-								>
-									ดูสถานที่ลงชื่อ
-									<LocationIcon />
-								</a>
-							)}
+
+							<a
+								href="?channel=offline#sign"
+								class="heading-03 btn btn-outline btn-block border-secondary text-primary hover:text-white"
+							>
+								ดูสถานที่ลงชื่อ
+								<LocationIcon />
+							</a>
+
 							{/* {Config.petition.offline?.volunteer && (
 								<a
 									href="#volunteer"

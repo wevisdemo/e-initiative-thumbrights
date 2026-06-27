@@ -55,7 +55,7 @@ export default {
 	sheets: {
 		id: '1fsXSfcHlKsv2gYC1FrInRImx7Hc8STvpgJhJ6IxX2yc',
 		enableOfflineSignature: true,
-		enableLocations: true,
+		enableLocations: false,
 	},
 	renderer: {
 		templateFile: './public/petition-form.pdf',
