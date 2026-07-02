@@ -69,20 +69,20 @@ const offlineSignatureCount = await countOfflineSignatures();
 					) : (
 						<div class="space-y-2">
 							<a
-								href="?channel=online#sign"
+								href="#sign"
 								class="heading-03 btn btn-block border-none bg-primary text-white hover:bg-primary-focus"
 							>
 								ลงชื่อเลย
 								<PenIcon />
 							</a>
 
-							<a
+							{/* <a
 								href="?channel=offline#sign"
 								class="heading-03 btn btn-outline btn-block border-secondary text-primary hover:text-white"
 							>
 								ดูสถานที่ลงชื่อ
 								<LocationIcon />
-							</a>
+							</a> */}
 
 							{/* {Config.petition.offline?.volunteer && (
 								<a
