@@ -7,7 +7,7 @@ export default {
 		previewImageUrl: 'https://decoup6octsins.com/yog.png',
 	},
 	petition: {
-		endDate: new Date('2026-06-30T00:00:00+07:00'),
+		endDate: new Date('2026-10-30T00:00:00+07:00'),
 		expectedSignatures: 50000,
 		offline: {
 			formUrl: 'petition-form.pdf',
