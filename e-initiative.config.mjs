@@ -10,8 +10,8 @@ export default {
 		endDate: new Date('2026-10-30T00:00:00+07:00'),
 		expectedSignatures: 50000,
 		offline: {
-			formUrl: 'petition-form.pdf',
-			formExampleImageUrl: 'image/petition-form.jpg',
+			formUrl: 'หลักฐานการลงลายมือชื่อ_๕๐ ปี 6 ตุลา.pdf',
+			formExampleImageUrl: 'image/petition-form.png',
 			headquarter: {
 				name: '',
 				address:
@@ -58,7 +58,7 @@ export default {
 		enableLocations: false,
 	},
 	renderer: {
-		templateFile: './public/petition-form.pdf',
+		templateFile: './public/หลักฐานการลงลายมือชื่อ_๕๐ ปี 6 ตุลา.pdf',
 		fontFile: './src/fonts/Sarabun-Regular.ttf',
 		fontSize: 10,
 		lineHeight: 14,
