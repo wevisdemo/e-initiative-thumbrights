@@ -5,13 +5,10 @@ import UpdateTimestamp from '../UpdateTimestamp.svelte';
 import PenIcon from '../icons/PenIcon.svelte';
 import { isCampaignEnded } from '../../utils/campaign';
 import { countSubmittedDocuments } from '../../utils/firebase';
-import { countOfflineSignatures } from '../../utils/sheets';
 import Sharer from '../Sharer.svelte';
 import { withBase } from '../../utils/url';
-import LocationIcon from '../icons/LocationIcon.svelte';
 
 const documentCount = await countSubmittedDocuments();
-const offlineSignatureCount = await countOfflineSignatures();
 ---
 
 <SectionContainer
@@ -46,9 +43,7 @@ const offlineSignatureCount = await countOfflineSignatures();
 			<div class="flex flex-col gap-3">
 				<div>
 					<p class="heading-responsive-02 text-neutral">
-						ลงแล้ว <b class="text-primary"
-							>{Number(documentCount.toLocaleString())}</b
-						> คน
+						ลงแล้ว <b class="text-primary">{documentCount.toLocaleString()}</b> คน
 					</p>
 					<p class="body-03-normal text-neutral">
 						<!-- {dayElapsed > 0 && <>เหลือเวลาอีก {dayElapsed} วัน</>} -->
