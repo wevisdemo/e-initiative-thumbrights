@@ -11,6 +11,7 @@ import DetailSection from '../components/index/DetailSection.astro';
 import BarSection from '../components/index/BarSection.astro';
 import { isCampaignEnded } from '../utils/campaign';
 import UnderBarSection from '../components/index/UnderBarSection.astro';
+import AnnouncementBanner from '../components/AnnouncementBanner.svelte';
 ---
 
 <Body>
@@ -31,4 +32,5 @@ import UnderBarSection from '../components/index/UnderBarSection.astro';
 		<AboutSection />
 	</div>
 	<Navbar slot="after-footer" client:idle />
+	<AnnouncementBanner client:idle />
 </Body>
