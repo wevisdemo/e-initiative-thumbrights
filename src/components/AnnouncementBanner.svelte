@@ -7,7 +7,7 @@
 </script>
 
 {#if isVisible}
-	<div class="fixed inset-x-0 top-0 z-[60] bg-primary text-white shadow-lg">
+	<div class="sticky inset-x-0 top-0 z-[60] bg-primary text-white shadow-lg">
 		<div
 			class="mx-auto flex w-full max-w-screen-lg items-start justify-between gap-2 px-4 py-2 md:gap-4 md:py-3"
 		>

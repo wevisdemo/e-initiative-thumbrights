@@ -16,6 +16,7 @@ import AnnouncementBanner from '../components/AnnouncementBanner.svelte';
 
 <Body>
 	<div class="flex flex-col">
+		<AnnouncementBanner client:idle />
 		<LandingSection />
 		<IntroSection />
 		<DetailSection />
@@ -32,5 +33,4 @@ import AnnouncementBanner from '../components/AnnouncementBanner.svelte';
 		<AboutSection />
 	</div>
 	<Navbar slot="after-footer" client:idle />
-	<AnnouncementBanner client:idle />
 </Body>
