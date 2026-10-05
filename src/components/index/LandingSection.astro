@@ -46,8 +46,12 @@ const documentCount = await countSubmittedDocuments();
 						ลงแล้ว <b class="text-primary">{documentCount.toLocaleString()}</b> คน
 					</p>
 					<p class="body-03-normal text-neutral">
-						<!-- {dayElapsed > 0 && <>เหลือเวลาอีก {dayElapsed} วัน</>} -->
-						ภายใน 6 ตุลาคม 2569
+						ภายใน {
+							Config.petition.endDate.toLocaleDateString('th-TH', {
+								dateStyle: 'long',
+								timeZone: 'Asia/Bangkok',
+							})
+						}
 					</p>
 					<UpdateTimestamp client:load date={new Date()} />
 				</div>
