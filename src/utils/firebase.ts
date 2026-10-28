@@ -64,17 +64,30 @@ export const countSubmittedDocuments = async (): Promise<number> => {
 	}
 };
 
+type SerializedTimestamp = SubmittedDocument['timestamp'] & {
+	_seconds?: number;
+	_nanoseconds?: number;
+};
+
 export async function getDocuments(
 	pageLimit: number,
 	lastCitizenId?: string,
 ): Promise<SubmittedDocument[]> {
 	const listFn = httpsCallable<
 		{ pageLimit: number; lastCitizenId?: string },
-		{ documents: SubmittedDocument[] }
+		{ documents: (SubmittedDocument & { timestamp: SerializedTimestamp })[] }
 	>(functions, 'listDocuments');
 
 	const result = await listFn({ pageLimit, lastCitizenId });
-	return result.data.documents;
+
+	// Admin SDK Timestamps are serialized as _seconds/_nanoseconds by the callable
+	return result.data.documents.map((doc) => ({
+		...doc,
+		timestamp: {
+			seconds: doc.timestamp.seconds ?? doc.timestamp._seconds,
+			nanoseconds: doc.timestamp.nanoseconds ?? doc.timestamp._nanoseconds,
+		},
+	}));
 }
 
 function getEnv(key: string) {
