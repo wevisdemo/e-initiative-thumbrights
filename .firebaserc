@@ -1,5 +1,6 @@
 {
 	"projects": {
-		"default": "demo-e-initiative-template"
+		"default": "demo-e-initiative-template",
+		"production": "e-initiative-thumbrights"
 	}
 }
