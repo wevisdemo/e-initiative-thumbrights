@@ -19,6 +19,8 @@ export interface EInitiativeConfig {
 		endDate: Date;
 		/** Number of signatures goal */
 		expectedSignatures: number;
+		/** Final signatures count after data dump and cleaning */
+		finalSignatures: number;
 		/** Offline channel information
 		 * @optional
 		 */

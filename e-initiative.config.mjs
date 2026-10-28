@@ -9,6 +9,7 @@ export default {
 	petition: {
 		endDate: new Date('2026-10-17T00:00:00+07:00'),
 		expectedSignatures: 50000,
+		finalSignatures: 57107,
 		offline: {
 			formUrl: 'หลักฐานการลงลายมือชื่อ_๕๐ ปี 6 ตุลา.pdf',
 			formExampleImageUrl: 'image/petition-form.png',
