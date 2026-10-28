@@ -63,16 +63,16 @@ export default {
 		fontSize: 10,
 		lineHeight: 14,
 		fields: [
-			{ key: 'location', type: 'text', x: 375, y: 665, maxWidth: 160 },
-			{ key: 'day', type: 'text', x: 317, y: 644 },
-			{ key: 'month', type: 'text', x: 376, y: 644, maxWidth: 83 },
-			{ key: 'year', type: 'text', x: 496, y: 644 },
-			{ key: 'fullname', type: 'text', x: 229, y: 589, maxWidth: 290 },
+			{ key: 'location', type: 'text', x: 375, y: 656, maxWidth: 160 },
+			{ key: 'day', type: 'text', x: 319, y: 638 },
+			{ key: 'month', type: 'text', x: 392, y: 638, maxWidth: 83 },
+			{ key: 'year', type: 'text', x: 499, y: 638 },
+			{ key: 'fullname', type: 'text', x: 229, y: 587, maxWidth: 290 },
 			{
 				key: 'citizenId',
 				type: 'text',
 				x: 223,
-				y: 537,
+				y: 532,
 				fontSize: 22,
 				lineHeight: 30,
 				split: {
@@ -90,7 +90,7 @@ export default {
 				maxWidth: 100,
 				maxHeight: 50,
 			},
-			{ key: 'fullname', type: 'text', x: 318, y: 365, maxWidth: 120 },
+			{ key: 'fullname', type: 'text', x: 332, y: 362, maxWidth: 120 },
 		],
 	},
 };
